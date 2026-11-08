@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="tr" data-contrast="normal" data-scale="100">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="meta.title">Eren — Erişilebilirlik Portfolyosu</title>
+  <meta name="description" content="WCAG 2.2 ve PDF/UA standartlarında dijital erişilebilirlik ve doküman düzeltme portfolyosu.">
+  
+  <!-- Fontlar: Atkinson Hyperlegible -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS & Custom CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans leading-relaxed min-h-screen flex flex-col transition-colors duration-200">
+
+  <!-- Ekran Okuyucu Dostu İçeriğe Atla Bağlantısı -->
+  <a class="skip-link" href="#icerik" data-i18n="skip">Ana içeriğe atla</a>
+
+  <!-- Erişilebilirlik Araç Çubuğu -->
+  <div class="toolbar bg-slate-900 text-white py-2 px-4 shadow-md sticky top-0 z-40" role="region" aria-label="Erişilebilirlik Tercihleri">
+    <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-3 text-sm">
+      
+      <!-- Dil Seçimi -->
+      <div class="tgroup flex items-center gap-2" role="group" aria-label="Dil seçimi">
+        <span class="font-semibold text-slate-300" data-i18n="toolbar.langLabel">Dil:</span>
+        <button type="button" class="tbtn px-3 py-1 rounded bg-slate-800 hover:bg-slate-700 aria-pressed:bg-sky-600 aria-pressed:font-bold border border-slate-700" data-lang="tr" aria-pressed="true">Türkçe</button>
+        <button type="button" class="tbtn px-3 py-1 rounded bg-slate-800 hover:bg-slate-700 aria-pressed:bg-sky-600 aria-pressed:font-bold border border-slate-700" data-lang="en" aria-pressed="false">English</button>
+      </div>
+
+      <!-- Kontrast Modu -->
+      <div class="tgroup flex items-center gap-2" role="group" aria-label="Renk Kontrastı">
+        <span class="font-semibold text-slate-300" data-i18n="toolbar.contrastLabel">Kontrast:</span>
+        <button type="button" class="tbtn px-3 py-1 rounded bg-slate-800 hover:bg-slate-700 aria-pressed:bg-sky-600 aria-pressed:font-bold border border-slate-700" data-contrast="normal" aria-pressed="true" data-i18n="toolbar.normal">Standart</button>
+        <button type="button" class="tbtn px-3 py-1 rounded bg-slate-800 hover:bg-slate-700 aria-pressed:bg-sky-600 aria-pressed:font-bold border border-slate-700" data-contrast="high" aria-pressed="false" data-i18n="toolbar.highContrast">Yüksek Kontrast</button>
+      </div>
+
+      <!-- Yazı Boyutu Seçimi -->
+      <div class="tgroup flex items-center gap-2" role="group" aria-label="Yazı Boyutu Ölçeği">
+        <span class="font-semibold text-slate-300" data-i18n="toolbar.sizeLabel">Yazı Boyutu:</span>
+        <button type="button" class="tbtn tsize px-3 py-1 rounded bg-slate-800 hover:bg-slate-700 aria-pressed:bg-sky-600 aria-pressed:font-bold border border-slate-700" data-scale="100" aria-pressed="true" title="Varsayılan Boyut (%100)">A</button>
+        <button type="button" class="tbtn tsize px-3 py-1 rounded bg-slate-800 hover:bg-slate-700 aria-pressed:bg-sky-600 aria-pressed:font-bold border border-slate-700 text-base" data-scale="115" aria-pressed="false" title="Büyük Boyut (%115)">A+</button>
+        <button type="button" class="tbtn tsize px-3 py-1 rounded bg-slate-800 hover:bg-slate-700 aria-pressed:bg-sky-600 aria-pressed:font-bold border border-slate-700 text-lg" data-scale="130" aria-pressed="false" title="Çok Büyük Boyut (%130)">A++</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Üst Başlık ve Navigasyon -->
+  <header class="intro bg-white border-b border-slate-200 py-8 px-4 sm:px-6 lg:px-8 shadow-sm">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+      <div>
+        <h1 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight" data-i18n="header.name">
+          Eren MEDE — Erişilebilirlik Portfolyosu
+        </h1>
+        <p class="role mt-2 text-lg text-slate-700 font-medium" data-i18n="header.tagline">
+          WCAG 2.2 ve PDF/UA Standartlarında Doküman & Web Erişilebilirlik Uzmanı
+        </p>
+      </div>
+
+      <!-- Gezinti Menüsü -->
+      <nav aria-label="Ana Navigasyon">
+        <ul class="flex flex-wrap gap-2 sm:gap-4 font-semibold text-slate-800">
+          <li>
+            <a href="#hakkimda" class="px-3 py-2 rounded-lg hover:bg-sky-50 hover:text-sky-700 border border-transparent hover:border-sky-200 transition-colors inline-block" data-i18n="nav.about">Hakkımda</a>
+          </li>
+          <li>
+            <a href="#sertifikalarim" class="px-3 py-2 rounded-lg hover:bg-sky-50 hover:text-sky-700 border border-transparent hover:border-sky-200 transition-colors inline-block" data-i18n="nav.certs">Sertifikalarım</a>
+          </li>
+          <li>
+            <a href="#ornek-calismalar" class="px-3 py-2 rounded-lg hover:bg-sky-50 hover:text-sky-700 border border-transparent hover:border-sky-200 transition-colors inline-block" data-i18n="nav.projects">Örnek Çalışmalar</a>
+          </li>
+          <li>
+            <a href="#iletisim" class="px-3 py-2 rounded-lg hover:bg-sky-50 hover:text-sky-700 border border-transparent hover:border-sky-200 transition-colors inline-block" data-i18n="nav.contact">İletişim</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Ana İçerik -->
+  <main id="icerik" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow w-full space-y-16">
+
+    <!-- 1. HAKKIMDA BÖLÜMÜ -->
+    <section id="hakkimda" aria-labelledby="h-hakkimda" class="scroll-mt-24">
+      <div class="card-box bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm">
+        <h2 id="h-hakkimda" class="text-2xl sm:text-3xl font-bold text-slate-900 border-b-2 border-sky-600 pb-3 mb-4" data-i18n="about.title">
+          Hakkımda
+        </h2>
+        <div class="space-y-4 text-slate-800 text-lg">
+          <p data-i18n="about.p1">
+            Devlet okulunda 20 yıldır İngilizce öğretmenliği ve müdür yardımcılığı yapıyorum. IAAP’ın CPACC sertifikası üzerinden erişilebilirlik alanına geçiş yapıyor, WCAG ve PDF/UA standartlarında eğitim materyallerinin uzaktan erişilebilirlik değerlendirmesi ve düzeltmesi üzerine uzmanlaşıyorum.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. SERTİFİKALARIM BÖLÜMÜ -->
+    <section id="sertifikalarim" aria-labelledby="h-sertifikalarim" class="scroll-mt-24">
+      <div class="mb-6">
+        <h2 id="h-sertifikalarim" class="text-2xl sm:text-3xl font-bold text-slate-900 border-b-2 border-sky-600 pb-2 inline-block" data-i18n="certs.title">
+          Sertifikalarım
+        </h2>
+        <p class="text-slate-600 mt-2" data-i18n="certs.subtitle">Uluslararası akredite sertifikalarım ve doğrulama bağlantıları</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Sertifika Kartı 1 -->
+        <article class="card-box bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-4">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="inline-block px-3 py-1 bg-sky-100 text-sky-800 text-xs font-bold rounded-full uppercase" data-i18n="certs.c1.badge">IAAP Sertifikası</span>
+              <span class="text-sm font-semibold text-slate-500">2024</span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900" data-i18n="certs.c1.name">
+              IAAP CPACC — Certified Professional in Accessibility Core Competencies
+            </h3>
+            <p class="text-slate-600 text-base mt-3" data-i18n="certs.c1.desc">
+              Erişilebilirlik ilkeleri, WCAG standartları, evrensel tasarım ve engellilik yasaları konusunda uluslararası yeterlilik belgesi.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100">
+            <a href="files/cpacc-sertifika.pdf" target="_blank" rel="noopener noreferrer" class="btn-primary inline-flex items-center px-4 py-2 bg-sky-700 hover:bg-sky-800 text-white text-sm font-semibold rounded-lg transition-colors" aria-label="CPACC Sertifikasını PDF Olarak İndir ve İncele (Yeni Pencere)">
+              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+              <span data-i18n="certs.c1.btn">Sertifikayı İndir (PDF)</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Sertifika Kartı 2 -->
+        <article class="card-box bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-4">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="inline-block px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full uppercase" data-i18n="certs.c2.badge">PDF/UA Sertifikası</span>
+              <span class="text-sm font-semibold text-slate-500">2024</span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900" data-i18n="certs.c2.name">
+              PDF/UA Doküman Erişilebilirlik ve PAC Denetim Uzmanlığı
+            </h3>
+            <p class="text-slate-600 text-base mt-3" data-i18n="certs.c2.desc">
+              ISO 14289-1 (PDF/UA) standardında etiketleme, okuma sırası düzenleme ve PAC 2024 doğrulama uzmanlığı.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100">
+            <a href="files/pdf-ua-sertifika.pdf" target="_blank" rel="noopener noreferrer" class="btn-primary inline-flex items-center px-4 py-2 bg-sky-700 hover:bg-sky-800 text-white text-sm font-semibold rounded-lg transition-colors" aria-label="PDF UA Sertifikasını PDF Olarak İndir ve İncele (Yeni Pencere)">
+              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+              <span data-i18n="certs.c2.btn">Sertifikayı İndir (PDF)</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 3. ÖRNEK ÇALIŞMALAR (BLOG / MEDIUM TARZI) -->
+    <section id="ornek-calismalar" aria-labelledby="h-ornek-calismalar" class="scroll-mt-24 space-y-6">
+      <div>
+        <h2 id="h-ornek-calismalar" class="text-2xl sm:text-3xl font-bold text-slate-900 border-b-2 border-sky-600 pb-2 inline-block" data-i18n="projects.title">
+          Örnek Çalışmalar
+        </h2>
+        <p class="text-slate-600 mt-2" data-i18n="projects.subtitle">
+          Erişilebilir hale getirdiğim dokümanlar ve detaylı vaka incelemeleri.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- Blog Kartı 3 (en yeni) -->
+        <article class="card-box bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="relative h-48 bg-slate-100 overflow-hidden">
+              <img src="files/ornek3-kapak.png" alt="İki PAC 2024 raporunun yan yana karşılaştırması: solda PDF/UA uyumlu değil sonucu veren orijinal dosya, sağda hata içermeyen ve yalnızca üç uyarı veren erişilebilir sürüm" class="w-full h-full object-cover">
+              <span class="absolute top-3 left-3 bg-slate-900/80 text-white text-xs font-semibold px-3 py-1 rounded-full">PDF / UA</span>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center text-xs font-medium text-slate-500 mb-2 space-x-3">
+                <time datetime="2026-11-08">8 Kasım 2026</time>
+                <span>•</span>
+                <span data-i18n="blog.readTime3">6 dk okuma</span>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-3">
+                <button type="button" class="text-left w-full hover:underline focus:outline-none open-modal-btn" data-modal="modal-3" data-i18n="blog.h3">
+                  Bir MEB Çalışma Yaprağını Erişilebilir Yapmak: PDF/UA Öncesi ve Sonrası
+                </button>
+              </h3>
+              <p class="text-slate-600 text-base line-clamp-3 mb-4" data-i18n="blog.excerpt3">
+                Biyoloji 11 "Bağışıklık Sistemi" çalışma yaprağının PAC raporlarında 1 etiketten 404 etikete, binlerce hatadan sıfır hataya yolculuğu ve raporda kalan 3 uyarının nedeni.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-0">
+            <button type="button" class="btn-primary inline-flex items-center text-sky-700 font-bold hover:text-sky-900 open-modal-btn" data-modal="modal-3" aria-label="MEB Çalışma Yaprağı Erişilebilirlik Çalışmasını Okuyun">
+              <span data-i18n="blog.readMore">Yazıyı Oku ve Dokümanı İncele</span>
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Blog Kartı 1 -->
+        <article class="card-box bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="relative h-48 bg-slate-100 overflow-hidden">
+              <img src="files/ornek1-kapak.png" alt="PDF/UA PAC 2024 Denetim Raporu Ekran Görüntüsü" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/800x450/0284c7/ffffff?text=PDF+UA+Denetim+Analizi'">
+              <span class="absolute top-3 left-3 bg-slate-900/80 text-white text-xs font-semibold px-3 py-1 rounded-full">PDF / UA</span>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center text-xs font-medium text-slate-500 mb-2 space-x-3">
+                <time datetime="2024-04-10">10 Nisan 2024</time>
+                <span>•</span>
+                <span data-i18n="blog.readTime1">4 dk okuma</span>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-3">
+                <button type="button" class="text-left w-full hover:underline focus:outline-none open-modal-btn" data-modal="modal-1" data-i18n="blog.h1">
+                  Karmaşık Ders Kitabının PDF/UA Standardına Dönüştürülmesi
+                </button>
+              </h3>
+              <p class="text-slate-600 text-base line-clamp-3 mb-4" data-i18n="blog.excerpt1">
+                Karmaşık tablolar ve matematiksel içerikler barındıran 40 sayfalık eğitim dokümanının etiket yapısı, okuma sırası ve alternatif metin düzeltme adımları.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-0">
+            <button type="button" class="btn-primary inline-flex items-center text-sky-700 font-bold hover:text-sky-900 open-modal-btn" data-modal="modal-1" aria-label="Karmaşık Ders Kitabı Çalışmasını Okuyun">
+              <span data-i18n="blog.readMore">Yazıyı Oku ve Dokümanı İncele</span>
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Blog Kartı 2 -->
+        <article class="card-box bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="relative h-48 bg-slate-100 overflow-hidden">
+              <img src="files/ornek2-kapak.png" alt="Word Erişilebilirlik Denetleyicisi Paneli Ekran Görüntüsü" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/800x450/0369a1/ffffff?text=Word+WCAG+Düzeltme'">
+              <span class="absolute top-3 left-3 bg-slate-900/80 text-white text-xs font-semibold px-3 py-1 rounded-full">MS Word / WCAG</span>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center text-xs font-medium text-slate-500 mb-2 space-x-3">
+                <time datetime="2024-03-20">20 Mart 2024</time>
+                <span>•</span>
+                <span data-i18n="blog.readTime2">3 dk okuma</span>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-3">
+                <button type="button" class="text-left w-full hover:underline focus:outline-none open-modal-btn" data-modal="modal-2" data-i18n="blog.h2">
+                  Kurumsal Raporların Kaynağında (Word) Erişilebilir Hazırlanması
+                </button>
+              </h3>
+              <p class="text-slate-600 text-base line-clamp-3 mb-4" data-i18n="blog.excerpt2">
+                Hiyerarşik başlık yapıları (H1-H4), renk kontrastına uygun grafikler ve tablo başlık eşleştirmeleri ile sıfır hatalı dışa aktarım (Export PDF).
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-0">
+            <button type="button" class="btn-primary inline-flex items-center text-sky-700 font-bold hover:text-sky-900 open-modal-btn" data-modal="modal-2" aria-label="Kurumsal Rapor Çalışmasını Okuyun">
+              <span data-i18n="blog.readMore">Yazıyı Oku ve Dokümanı İncele</span>
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 4. İLETİŞİM BÖLÜMÜ -->
+    <section id="iletisim" aria-labelledby="h-iletisim" class="scroll-mt-24">
+      <div class="card-box bg-slate-900 text-white p-8 rounded-2xl shadow-lg">
+        <h2 id="h-iletisim" class="text-2xl sm:text-3xl font-bold border-b border-slate-700 pb-3 mb-4" data-i18n="contact.title">
+          İletişim
+        </h2>
+        <p class="text-slate-300 text-lg mb-6" data-i18n="contact.desc">
+          Dokümanlarınızın WCAG ve PDF/UA erişilebilirlik değerlendirmesi için iletişim kurabilirsiniz.
+        </p>
+
+        <div class="space-y-4 text-base">
+          <div class="flex items-center gap-3">
+            <svg class="w-6 h-6 text-sky-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 002-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            <span>
+              <strong data-i18n="contact.emailLabel">E-posta:</strong> 
+              <a href="mailto:eren.accessibility@example.com" class="text-sky-300 hover:text-sky-100 underline">eren.accessibility@example.com</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MAKALE MODALLARI -->
+
+  <!-- Modal 1 -->
+  <div id="modal-1" class="modal fixed inset-0 z-50 hidden bg-slate-900/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+    <div class="card-box bg-white w-full max-w-4xl rounded-2xl shadow-2xl p-6 sm:p-8 my-8 relative max-h-[90vh] overflow-y-auto">
+      
+      <button type="button" class="close-modal-btn absolute top-4 right-4 text-slate-500 hover:text-slate-900 bg-slate-100 p-2 rounded-full" aria-label="Pencereyi Kapat">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+
+      <div class="pr-8 mb-6 border-b border-slate-200 pb-4">
+        <span class="inline-block px-3 py-1 bg-sky-100 text-sky-800 text-xs font-bold rounded-full uppercase mb-2">PDF / UA Vaka Analizi</span>
+        <h2 id="modal-1-title" class="text-2xl sm:text-3xl font-bold text-slate-900" data-i18n="blog.h1">
+          Karmaşık Ders Kitabının PDF/UA Standardına Dönüştürülmesi
+        </h2>
+      </div>
+
+      <div class="space-y-4 text-slate-800 text-lg">
+        <p>
+          Bu çalışmada, 40 sayfalık akademik bir ders dokümanının PAC 2024 (PDF Accessibility Checker) ve Adobe Acrobat Pro araçlarıyla ISO 14289-1 (PDF/UA) standardına tam uyumlu hale getirilmesi incelenmiştir.
+        </p>
+
+        <h3 class="text-xl font-bold text-slate-900 mt-6 mb-2">Yapılan Erişilebilirlik Düzenlemeleri:</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Tüm metin hiyerarşisi (H1, H2, H3) düzgün bir şekilde etiketlendi.</li>
+          <li>Görsellere detaylı ekran okuyucu alternatif metinleri (alt-text) eklendi.</li>
+          <li>Karmaşık tablolar başlık hücreleri (TH) ve kimlik yapılarıyla ilişkilendirildi.</li>
+        </ul>
+
+        <!-- İNDİRME ALANI (BLOG SONU) -->
+        <div class="mt-8 p-6 bg-sky-50 border-2 border-sky-200 rounded-xl flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div>
+            <h4 class="text-lg font-bold text-slate-900">Erişilebilir PDF Dokümanını İndirin</h4>
+            <p class="text-sm text-slate-600">Format: PDF/UA Tam Uyumlu | Boyut: 2.1 MB</p>
+          </div>
+
+          <a href="files/ornek-akademik-ders-dokumani.pdf" download class="btn-primary w-full sm:w-auto px-6 py-3 bg-sky-700 hover:bg-sky-800 text-white font-bold rounded-lg text-center transition-colors flex items-center justify-center gap-2" aria-label="Erişilebilir Hale Getirilmiş Örnek Ders Dokümanını İndir (PDF)">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+            <span>Örnek PDF'i İndir</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2 -->
+  <div id="modal-2" class="modal fixed inset-0 z-50 hidden bg-slate-900/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="modal-2-title">
+    <div class="card-box bg-white w-full max-w-4xl rounded-2xl shadow-2xl p-6 sm:p-8 my-8 relative max-h-[90vh] overflow-y-auto">
+      
+      <button type="button" class="close-modal-btn absolute top-4 right-4 text-slate-500 hover:text-slate-900 bg-slate-100 p-2 rounded-full" aria-label="Pencereyi Kapat">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+
+      <div class="pr-8 mb-6 border-b border-slate-200 pb-4">
+        <span class="inline-block px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full uppercase mb-2">MS Word / WCAG</span>
+        <h2 id="modal-2-title" class="text-2xl sm:text-3xl font-bold text-slate-900" data-i18n="blog.h2">
+          Kurumsal Raporların Kaynağında (Word) Erişilebilir Hazırlanması
+        </h2>
+      </div>
+
+      <div class="space-y-4 text-slate-800 text-lg">
+        <p>
+          Doküman erişilebilirliği henüz tasarım aşamasında Word dosyalarında uygulandığında dışa aktarılan PDF belgeleri %90 oranında hatasız oluşur.
+        </p>
+
+        <!-- İNDİRME ALANI (BLOG SONU) -->
+        <div class="mt-8 p-6 bg-sky-50 border-2 border-sky-200 rounded-xl flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div>
+            <h4 class="text-lg font-bold text-slate-900">Erişilebilir Word/PDF Raporunu İndirin</h4>
+            <p class="text-sm text-slate-600">Format: PDF (Word Kaynaklı) | Boyut: 1.4 MB</p>
+          </div>
+
+          <a href="files/ornek-word-kurumsal-rapor.pdf" download class="btn-primary w-full sm:w-auto px-6 py-3 bg-sky-700 hover:bg-sky-800 text-white font-bold rounded-lg text-center transition-colors flex items-center justify-center gap-2" aria-label="Erişilebilir Kurumsal Rapor Dokümanını İndir (PDF)">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+            <span>Örnek PDF'i İndir</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3 -->
+  <div id="modal-3" class="modal fixed inset-0 z-50 hidden bg-slate-900/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="modal-3-title">
+    <div class="card-box bg-white w-full max-w-4xl rounded-2xl shadow-2xl p-6 sm:p-8 my-8 relative max-h-[90vh] overflow-y-auto">
+
+      <button type="button" class="close-modal-btn absolute top-4 right-4 text-slate-500 hover:text-slate-900 bg-slate-100 p-2 rounded-full" aria-label="Pencereyi Kapat">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+
+      <div class="pr-8 mb-6 border-b border-slate-200 pb-4">
+        <span class="inline-block px-3 py-1 bg-sky-100 text-sky-800 text-xs font-bold rounded-full uppercase mb-2">PDF / UA Vaka Analizi</span>
+        <h2 id="modal-3-title" class="text-2xl sm:text-3xl font-bold text-slate-900" data-i18n="blog.h3">
+          Bir MEB Çalışma Yaprağını Erişilebilir Yapmak: PDF/UA Öncesi ve Sonrası
+        </h2>
+      </div>
+
+      <!-- Yazı gövdesi Türkçe; arayüz İngilizceye çevrildiğinde bile dil bilgisi doğru kalsın diye lang="tr" -->
+      <div lang="tr" class="space-y-4 text-slate-800 text-lg">
+
+        <p>
+          Bir PDF'e bakınca ne gördüğünüz ile bir ekran okuyucunun ne "gördüğü" aynı şey değildir. Bu yazıda Biyoloji 11 "Bağışıklık Sistemi" çalışma yaprağını erişilebilir hâle getirirken yaptıklarımı, PAC raporlarındaki öncesi/sonrası farkı ve sonuç raporunda kalan tek uyarının neden bilinçli bir tercih olduğunu anlatıyorum.
+        </p>
+
+        <h3 class="text-xl font-bold text-slate-900 mt-6 mb-2">Belge hakkında</h3>
+        <p>
+          Dört sayfalık, Ortaöğretim Genel Müdürlüğü tarafından hazırlanmış bir ders çalışma yaprağı. İçinde başlıklar, yönergeler, iki tablo, çoktan seçmeli sorular, doğal ve kazanılmış bağışıklığı gösteren bir şema ve antikor düzeyinin zamanla değişimini gösteren bir grafik var. Erişilebilirlik açısından neredeyse her zor öğeyi barındırdığı için iyi bir test materyali.
+        </p>
+
+        <h3 class="text-xl font-bold text-slate-900 mt-6 mb-2">Önce: görsel olarak sorunsuz, yapısal olarak yok</h3>
+        <p>
+          Orijinal dosyayı PAC 2024 ile PDF/UA-1 standardına göre denetlediğimde sonuç net: "This PDF file is not PDF/UA compliant."
+        </p>
+        <p>
+          Etiketsiz bir PDF, içindekiler tablosu, bölüm başlığı ve sayfa numarası olmayan, sayfaları fotoğraflanmış bir kitap gibidir. Ekran okuyucu metni bir şekilde okur ama hangisinin başlık, hangisinin tablo hücresi, hangisinin süs olduğunu bilmez; okuma sırasını da tahmin eder. Görme engelli bir öğrenci için bu, haritasız bir şehirde yürümek demektir.
+        </p>
+        <p>
+          Dil bilgisinin olmaması da ayrı bir sorun: Belgede dil tanımlı olmadığı için "Natural language" kontrolünde 3827 hata çıktı. Bu durumda ekran okuyucu Türkçe metni yanlış dilin telaffuz kurallarıyla okuyabilir.
+        </p>
+
+        <h3 class="text-xl font-bold text-slate-900 mt-6 mb-2">Yaptığım düzenlemeler</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Başlık ve dil:</strong> Belge başlığı "Biyoloji 11 İnsan Fizyolojisi" olarak tanımlandı, belge dili Türkçe (tr) yapıldı.</li>
+          <li><strong>Etiketleme:</strong> Başlıklar, paragraflar, listeler ve tablolar uygun etiketlerle işaretlendi. Etiket sayısı 1'den 404'e çıktı.</li>
+          <li><strong>Süslemeler:</strong> Bilgi taşımayan öğeler artifact olarak işaretlendi, böylece ekran okuyucu bunları okumuyor.</li>
+          <li><strong>Tablolar:</strong> Başlık hücreleri tanımlandı; öğrencinin dolduracağı boş cevap hücreleri başlıklarla ilişkilendirildi.</li>
+          <li><strong>Görseller:</strong> Şema ve grafik Figure olarak etiketlendi ve alternatif metin eklendi (aşağıda ayrıntılı).</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-slate-900 mt-6 mb-2">Sonra: PAC raporu</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-base border-collapse">
+            <caption class="text-left font-semibold mb-2">PAC 2024 (PDF/UA-1) sonuçları: orijinal ve erişilebilir sürüm</caption>
+            <thead>
+              <tr class="bg-slate-100">
+                <th scope="col" class="border border-slate-300 px-3 py-2">Kontrol</th>
+                <th scope="col" class="border border-slate-300 px-3 py-2">Orijinal</th>
+                <th scope="col" class="border border-slate-300 px-3 py-2">Erişilebilir sürüm</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row" class="border border-slate-300 px-3 py-2 font-semibold">Etiket sayısı</th><td class="border border-slate-300 px-3 py-2">1</td><td class="border border-slate-300 px-3 py-2">404</td></tr>
+              <tr><th scope="row" class="border border-slate-300 px-3 py-2 font-semibold">Belge başlığı ve dili</th><td class="border border-slate-300 px-3 py-2">Yok</td><td class="border border-slate-300 px-3 py-2">Tanımlı (tr)</td></tr>
+              <tr><th scope="row" class="border border-slate-300 px-3 py-2 font-semibold">Content (hata)</th><td class="border border-slate-300 px-3 py-2">4799</td><td class="border border-slate-300 px-3 py-2">0</td></tr>
+              <tr><th scope="row" class="border border-slate-300 px-3 py-2 font-semibold">Natural language (hata)</th><td class="border border-slate-300 px-3 py-2">3827</td><td class="border border-slate-300 px-3 py-2">0</td></tr>
+              <tr><th scope="row" class="border border-slate-300 px-3 py-2 font-semibold">Metadata (hata)</th><td class="border border-slate-300 px-3 py-2">2</td><td class="border border-slate-300 px-3 py-2">0</td></tr>
+              <tr><th scope="row" class="border border-slate-300 px-3 py-2 font-semibold">Document settings (hata)</th><td class="border border-slate-300 px-3 py-2">2</td><td class="border border-slate-300 px-3 py-2">0</td></tr>
+              <tr><th scope="row" class="border border-slate-300 px-3 py-2 font-semibold">Alternative Descriptions (geçen)</th><td class="border border-slate-300 px-3 py-2">0</td><td class="border border-slate-300 px-3 py-2">3</td></tr>
+              <tr><th scope="row" class="border border-slate-300 px-3 py-2 font-semibold">Structure tree (uyarı)</th><td class="border border-slate-300 px-3 py-2">0</td><td class="border border-slate-300 px-3 py-2">3</td></tr>
+              <tr><th scope="row" class="border border-slate-300 px-3 py-2 font-semibold">Dosya boyutu</th><td class="border border-slate-300 px-3 py-2">316 KB</td><td class="border border-slate-300 px-3 py-2">680 KB</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Hata sütunu tamamen boş. Dosya boyutunun iki katına çıkması normal: yapı ağacı, etiketler ve gömülü yazı tipleri dosyaya ek veri olarak giriyor.
+        </p>
+
+        <h3 class="text-xl font-bold text-slate-900 mt-6 mb-2">Raporda kalan üçgen: hata değil, uyarı</h3>
+        <p>
+          Erişilebilir sürümün sonuç kutusunda "It's possible that some PDF/UA requirements aren't met." yazıyor. Bu ifade, Structure tree altındaki 3 uyarıdan geliyor. PAC'te <strong>hata (failed)</strong> kuralın kesin ihlalidir; <strong>uyarı (warned)</strong> ise aracın makinece karar veremediği, bir insanın değerlendirmesi gereken durumdur.
+        </p>
+        <p>
+          Bu uyarı, bazı grafik ve şemaları Figure olarak etiketlememden kaynaklanıyor. Bunu bilerek yaptım, çünkü bu öğeleri ekran okuyucuya hazırlamanın en verimli yolu buydu.
+        </p>
+
+        <h4 class="text-lg font-bold text-slate-900 mt-4">Neden Figure ve alt metin?</h4>
+        <p>
+          Alternatifi düşünelim: grafiğin içindeki her metni ("Antijene karşı oluşan antikorlar", "Hafta", "10", "100"...) ayrı ayrı etiketlersem ekran okuyucu bunları, grafiğin anlamını bilmeden, parça parça okur. Bu, bir resmi şeritlere kesip her şeridi ayrı ayrı anlatmaya benzer. Figure olarak etiketlenip iyi yazılmış bir alt metinle birleştiğinde okuyucu "grafik" der ve görseli tek bir bütün olarak, anlamlı biçimde aktarır.
+        </p>
+
+        <h4 class="text-lg font-bold text-slate-900 mt-4">Alt metin nasıl yazılmalı? Antikor grafiği örneği</h4>
+        <blockquote class="border-l-4 border-sky-600 pl-4 italic">
+          Zamana bağlı kandaki antikor düzeyi grafiği. Yatay eksen hafta, dikey eksen kandaki antikor düzeyi (10, 100, 1000). Antijenle ilk karşılaşmadan sonra yaklaşık 2.-3. haftada antikor düzeyi 10 civarına çıkıp düşer (birincil yanıt). Aynı antijenle tekrar karşılaşıldığında düzey çok daha hızlı yükselir, 1000'in üzerine çıkıp yavaşça azalır (ikincil yanıt, hafıza hücreleri). 11. haftada başka bir antijenle ilk karşılaşmada düzey yine 10 civarına çıkar.
+        </blockquote>
+        <p>
+          İlke şu: grafiğin <em>ne gösterdiğini ve hangi sonuca götürdüğünü</em> anlatın, her çizgiyi tek tek tarif etmeyin.
+        </p>
+
+        <h4 class="text-lg font-bold text-slate-900 mt-4">Şema bir etkinlik olunca</h4>
+        <p>
+          Doğal ve kazanılmış bağışıklık şeması ise ayrı bir durum, çünkü bir <strong>etkinlik</strong>: öğrenciden A-İ arası 11 terimi şemadaki dairelere (vücut dışı savunma, vücut içi savunma, kazanılmış bağışıklık) yerleştirmesi isteniyor. Alt metin yalnızca şemanın yapısını anlatırsa görme engelli öğrenci etkinliği yapamaz. Bu yüzden alt metinde bölgeleri ve daire sayılarını (4, 5 ve 2) belirtmek ve gerekirse etkinliğe eşdeğer bir metin alternatifi sunmak gerekir; örneğin terimleri üç gruba ayıran bir eşleştirme listesi.
+        </p>
+
+        <h4 class="text-lg font-bold text-slate-900 mt-4">Uyarı kalsın mı?</h4>
+        <p>
+          Bence kalsın. Uyarı bir kusur değil, "bu öğeyi bir insan değerlendirsin" notu ve bu değerlendirmeyi alt metni yazan kişi olarak ben yaptım. Figure ve alt metin yaklaşımı PDF/UA-1 ile de çelişmiyor.
+        </p>
+
+        <h3 class="text-xl font-bold text-slate-900 mt-6 mb-2">PAC'i geçmek erişilebilir olmak demek değildir</h3>
+        <p>PAC yalnızca makinece denetlenebilen kriterlere bakar. Şunları kontrol edemez:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Alt metnin gerçekten doğru ve yararlı olup olmadığı</li>
+          <li>Okuma sırasının mantıklı olup olmadığı</li>
+          <li>Başlık hiyerarşisinin anlamlı olup olmadığı</li>
+        </ul>
+        <p>
+          Bu yüzden son adım her zaman belgeyi bir ekran okuyucuyla (NVDA, VoiceOver) baştan sona dinlemek ve Matterhorn Protokolü'ndeki manuel kontrolleri yapmak olmalı.
+        </p>
+
+        <h3 class="text-xl font-bold text-slate-900 mt-6 mb-2">Özet</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Orijinal: 1 etiket, başlık ve dil yok, binlerce hata.</li>
+          <li>Erişilebilir sürüm: 404 etiket, başlık ve dil tanımlı, sıfır hata.</li>
+          <li>Kalan 3 uyarı, Figure ve alt metin tercihinden kaynaklanıyor ve bilinçli bir karar.</li>
+          <li>Otomatik denetim başlangıç noktasıdır; asıl test gerçek bir ekran okuyucuyla yapılır.</li>
+        </ul>
+
+        <p class="text-base text-slate-600">
+          Kaynak belge Milli Eğitim Bakanlığı Ortaöğretim Genel Müdürlüğü materyalidir; bu yazıda yalnızca erişilebilirlik çalışmasını göstermek amacıyla kullanılmıştır.
+        </p>
+
+        <!-- İNDİRME ALANI (BLOG SONU) -->
+        <div class="mt-8 p-6 bg-sky-50 border-2 border-sky-200 rounded-xl">
+          <h4 class="text-lg font-bold text-slate-900 mb-3">Dosyaları inceleyin</h4>
+          <ul class="space-y-3">
+            <li>
+              <a href="files/eesfmobr4gs.pdf" download class="btn-primary inline-flex items-center gap-2 px-4 py-2 bg-sky-700 hover:bg-sky-800 text-white font-semibold rounded-lg transition-colors">
+                <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                <span>Orijinal PDF (erişilemez) <span class="font-normal text-sm">(PDF, 316 KB)</span></span>
+              </a>
+            </li>
+            <li>
+              <a href="files/eesfmobr4gs_accessible.pdf" download class="btn-primary inline-flex items-center gap-2 px-4 py-2 bg-sky-700 hover:bg-sky-800 text-white font-semibold rounded-lg transition-colors">
+                <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                <span>Erişilebilir sürüm <span class="font-normal text-sm">(PDF, 681 KB)</span></span>
+              </a>
+            </li>
+            <li>
+              <a href="files/eesfmobr4gs_PAC_UA_Report.pdf" download class="btn-primary inline-flex items-center gap-2 px-4 py-2 bg-sky-700 hover:bg-sky-800 text-white font-semibold rounded-lg transition-colors">
+                <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                <span>PAC raporu: önce <span class="font-normal text-sm">(PDF, 406 KB)</span></span>
+              </a>
+            </li>
+            <li>
+              <a href="files/eesfmobr4gs_accessible_PAC_UA_Report.pdf" download class="btn-primary inline-flex items-center gap-2 px-4 py-2 bg-sky-700 hover:bg-sky-800 text-white font-semibold rounded-lg transition-colors">
+                <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                <span>PAC raporu: sonra <span class="font-normal text-sm">(PDF, 380 KB)</span></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-slate-900 text-slate-400 py-8 px-4 border-t border-slate-800 mt-12">
+    <div class="max-w-6xl mx-auto text-center text-sm">
+      <p>© 2024 Eren — Erişilebilirlik Portfolyosu. WCAG 2.2 ve ISO 14289-1 Standartlarına Uygundur.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
