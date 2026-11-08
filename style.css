@@ -1,0 +1,128 @@
+/* --- YAZI BOYUTU ÖLÇEĞİ (WCAG 1.4.4 RESIZE TEXT) --- /
+html[data-scale="100"] {
+font-size: 100% !important; / 16px /
+}
+html[data-scale="115"] {
+font-size: 115% !important; / ~18.4px /
+}
+html[data-scale="130"] {
+font-size: 130% !important; / ~20.8px */
+}
+
+/* Odaklama Çerçevesi (WCAG Focus Visible) */
+:focus-visible {
+outline: 3px solid #0284c7 !important;
+outline-offset: 3px !important;
+}
+
+/* Skip Link */
+.skip-link {
+position: absolute;
+top: -100px;
+left: 1rem;
+background: #000000;
+color: #ffffff;
+padding: 0.75rem 1.25rem;
+z-index: 100;
+font-weight: bold;
+border: 2px solid #ffffff;
+border-radius: 0.375rem;
+transition: top 0.2s ease;
+}
+.skip-link:focus {
+top: 1rem;
+}
+
+/* --- YÜKSEK KONTRAST MODU (WCAG 2.2 AAA HIGHEST CONTRAST) --- */
+html[data-contrast="high"],
+html[data-contrast="high"] body {
+background-color: #000000 !important;
+color: #ffffff !important;
+}
+
+/* Yüksek Kontrast: Tüm Kartlar, Modallar ve Bölümler */
+html[data-contrast="high"] .card-box,
+html[data-contrast="high"] .modal > div,
+html[data-contrast="high"] header,
+html[data-contrast="high"] footer,
+html[data-contrast="high"] .toolbar {
+background-color: #000000 !important;
+color: #ffffff !important;
+border: 2px solid #ffffff !important;
+}
+
+/* Yüksek Kontrast: Yazı Rengi Düzeltmeleri */
+html[data-contrast="high"] h1,
+html[data-contrast="high"] h2,
+html[data-contrast="high"] h3,
+html[data-contrast="high"] h4,
+html[data-contrast="high"] p,
+html[data-contrast="high"] span,
+html[data-contrast="high"] time,
+html[data-contrast="high"] li {
+color: #ffffff !important;
+}
+
+/* Yüksek Kontrast: Bağlantılar ve Butonlar (Yellow #FFFF00 Accent) */
+html[data-contrast="high"] a {
+color: #ffff00 !important;
+text-decoration: underline !important;
+}
+
+html[data-contrast="high"] button.tbtn,
+html[data-contrast="high"] .btn-primary {
+background-color: #000000 !important;
+color: #ffff00 !important;
+border: 2px solid #ffff00 !important;
+font-weight: bold !important;
+}
+
+html[data-contrast="high"] button.tbtn[aria-pressed="true"] {
+background-color: #ffff00 !important;
+color: #000000 !important;
+}
+
+html[data-contrast="high"] :focus-visible {
+outline: 4px solid #00ffff !important; /* Cyan outline */
+outline-offset: 4px !important;
+}
+/* Yazı boyutu ölçeklendirmesinin tüm sayfa genelinde çalışması için */
+body {
+  font-size.inherit: true;
+  transition: font-size 0.2s ease;
+}
+
+/* Buton aktifken görnecek net renkler */
+.tbtn[aria-pressed="true"] {
+  background-color: #0369a1 !important; /* Koyu mavi */
+  color: #ffffff !important;
+  border-color: #0369a1 !important;
+}
+/* Tüm rem tabanlı Tailwind metinlerinin dinamik büyümesini sağlar */
+html {
+  transition: font-size 0.2s ease;
+}
+
+
+/* Yüksek Kontrast: tablo, alıntı ve vurgu öğeleri (yazı gövdesindeki text-slate-800 sınıfını ezmek için) */
+html[data-contrast="high"] td,
+html[data-contrast="high"] th,
+html[data-contrast="high"] caption,
+html[data-contrast="high"] blockquote,
+html[data-contrast="high"] strong,
+html[data-contrast="high"] em,
+html[data-contrast="high"] h5 {
+  color: #ffffff !important;
+  background-color: #000000 !important;
+  border-color: #ffffff !important;
+}
+
+html[data-contrast="high"] blockquote {
+  border-left: 4px solid #ffff00 !important;
+}
+
+html[data-contrast="high"] .bg-sky-50,
+html[data-contrast="high"] .bg-slate-100 {
+  background-color: #000000 !important;
+  border-color: #ffffff !important;
+}
